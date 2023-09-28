@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Fake 3d Image - Three.js</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .slider-container {
+      width: 100%;
+      height: 100vh;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .slider {
+      display: flex;
+    }
+
+    .slider-slide {
+      flex: 0 0 100%;
+      height: 300px;
+      background-size: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .slider-slide:first-child {
+      opacity: 1;
+    }
+
+    .prev-button,
+    .next-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .prev-button {
+      left: 0;
+    }
+
+    .next-button {
+      right: 0;
+    }
+    .webgl {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body height="4000px">
+  <!-- partial:index.partial.html -->
+  <div class="slider-container">
+    <canvas class="webgl"></canvas>
+    <div class="slider">
+      <div class="slider-slide" style="background-image: url('image1.jpg');">
+        <h1>Slider 1</h1>
+      </div>
+      <div class="slider-slide" style="background-image: url('image2.jpg');">
+        <h1>Slider 2</h1>
+      </div>
+      <div class="slider-slide" style="background-image: url('image3.jpg');">
+        <h1>Slider 3</h1>
+      </div>
+    </div>
+    <button class="prev-button">Previous</button>
+    <button class="next-button">Next</button>
+  </div>
+  <!-- partial -->
+  <script type="module" src="./script.js"></script>
+
+</body>
+
+</html>
